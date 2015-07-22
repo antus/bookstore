@@ -1,0 +1,61 @@
+server:
+    port: 10344
+    address: localhost
+
+
+# security configuration (this key should be unique for your application, and kept secret)
+jhipster.security.rememberme.key: c7fb31c7080a51d10fad75be15746ea5e30b3326
+
+async:
+    corePoolSize: 2
+    maxPoolSize: 50
+    queueCapacity: 10000
+
+liquibase:
+    context: test
+
+spring:
+    datasource:
+        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+        url:
+        databaseName: bookstore
+        serverName: localhost
+        username: postgres
+        password: postgres
+
+    jpa:
+        database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
+        database: POSTGRESQL
+        openInView: false
+        show_sql: true
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+
+mail:
+    host: localhost
+    port: 25
+    username:
+    password:
+    protocol: smtp
+    tls: false
+    auth: false
+
+metrics:
+    jmx.enabled: false
+
+swagger:
+    apiDocsLocation: http://localhost:8080
+    title: jhipster API
+    version: 0.0.1
+    description: jhipster applications and beyond!
+    termsOfServiceUrl: http://jhipster.github.io/
+    contact:
+    license: Apache 2.0
+    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html

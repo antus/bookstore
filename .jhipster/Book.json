@@ -1,0 +1,66 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "author",
+            "relationshipNameCapitalized": "Author",
+            "relationshipFieldName": "author",
+            "otherEntityName": "author",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Author",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Title",
+            "fieldNameUnderscored": "title",
+            "fieldInJavaBeanMethod": "Title",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "price",
+            "fieldType": "BigDecimal",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Price",
+            "fieldNameUnderscored": "price",
+            "fieldInJavaBeanMethod": "Price",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description",
+            "fieldInJavaBeanMethod": "Description",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150714161538",
+    "dto": "no",
+    "pagination": "pager",
+    "validation": true
+}

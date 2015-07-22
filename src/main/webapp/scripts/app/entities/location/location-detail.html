@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span translate="bookstoreApp.location.detail.title">Location</span> {{location.id}}</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="bookstoreApp.location.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{location.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="bookstoreApp.location.description">Description</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{location.description}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="bookstoreApp.location.geom.geometry">Geom</span>
+                    </td>
+                    <td>
+                        <leaflet markers="markers" center="center" height="400px" width="100%"></leaflet>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="location"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,53 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description",
+            "fieldInJavaBeanMethod": "Description",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "geom",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "Geom",
+            "fieldNameUnderscored": "geom",
+            "fieldInJavaBeanMethod": "Geom",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150715102700",
+    "dto": "no",
+    "pagination": "pager",
+    "validation": true
+}

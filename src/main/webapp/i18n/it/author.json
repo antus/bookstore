@@ -1,0 +1,21 @@
+{
+    "bookstoreApp": {
+        "author" : {
+            "home": {
+                "title": "Autori",
+                "createLabel": "Creare un nuovo autore",
+                "createOrEditLabel": "crea o modifica un autore"
+            },
+            "delete": {
+                "question": "Si è sicuri di voler cancellare l'autore {{ id }} ?"
+            },
+            "detail": {
+                "title": "Autore"
+            },
+            "name": "Nome",
+            "birthday": "Data di nascita",
+            "book": "libro"
+        }
+    }
+}
+
