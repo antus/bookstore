@@ -55,7 +55,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
         if (dataSourcePropertyResolver.getProperty("url") == null && dataSourcePropertyResolver.getProperty("databaseName") == null) {
             log.error("Your database connection pool configuration is incorrect! The application" +
                     " cannot start. Please check your Spring profile, current profiles are: {}",
-                    Arrays.toString(env.getActiveProfiles()));
+                Arrays.toString(env.getActiveProfiles()));
 
             throw new ApplicationContextException("Database connection pool is not configured correctly");
         }
@@ -67,14 +67,27 @@ public class DatabaseConfiguration implements EnvironmentAware {
         } else {
             config.addDataSourceProperty("url", dataSourcePropertyResolver.getProperty("url"));
         }
-        config.addDataSourceProperty("user", dataSourcePropertyResolver.getProperty("username"));
-        config.addDataSourceProperty("password", dataSourcePropertyResolver.getProperty("password"));
+        //SQLite check
+        if (!"org.sqlite.SQLiteDataSource".equals(dataSourcePropertyResolver.getProperty("dataSourceClassName"))) {
+            config.addDataSourceProperty("user", dataSourcePropertyResolver.getProperty("username"));
+            config.addDataSourceProperty("password", dataSourcePropertyResolver.getProperty("password"));
+        }
 
+        //MySQL optimizations, see https://github.com/brettwooldridge/HikariCP/wiki/MySQL-Configuration
+        if ("com.mysql.jdbc.jdbc2.optional.MysqlDataSource".equals(dataSourcePropertyResolver.getProperty("dataSourceClassName"))) {
+            config.addDataSourceProperty("cachePrepStmts", dataSourcePropertyResolver.getProperty("cachePrepStmts", "true"));
+            config.addDataSourceProperty("prepStmtCacheSize", dataSourcePropertyResolver.getProperty("prepStmtCacheSize", "250"));
+            config.addDataSourceProperty("prepStmtCacheSqlLimit", dataSourcePropertyResolver.getProperty("prepStmtCacheSqlLimit", "2048"));
+        }
         if (metricRegistry != null) {
             config.setMetricRegistry(metricRegistry);
         }
 
-        config.setConnectionTestQuery("SELECT tablename FROM pg_catalog.pg_tables");
+        // Postgres and SQLite keep alive settings
+        if ("org.postgresql.ds.PGSimpleDataSource".equals(dataSourcePropertyResolver.getProperty("dataSourceClassName")) ||
+            "org.sqlite.SQLiteDataSource".equals(dataSourcePropertyResolver.getProperty("dataSourceClassName"))) {
+            config.setConnectionTestQuery("SELECT 1");
+        }
 
         return new HikariDataSource(config);
     }

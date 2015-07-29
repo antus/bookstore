@@ -29,6 +29,9 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
+        <modifySql dbms="mysql">
+            <append value=" engine myisam"/>
+        </modifySql>
     </changeSet>
 
     <changeSet id="Create spatial index" author="jhipster">

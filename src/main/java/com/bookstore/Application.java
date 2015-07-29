@@ -101,5 +101,6 @@ public class Application {
             "liquibase.snapshot", "liquibase.logging", "liquibase.diff",
             "liquibase.structure", "liquibase.structurecompare", "liquibase.lockservice",
             "liquibase.ext", "liquibase.changelog"));
+
     }
 }

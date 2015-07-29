@@ -2,18 +2,18 @@
     "bookstoreApp": {
         "location" : {
             "home": {
-                "title": "Locations",
-                "createLabel": "Create a new Location",
-                "createOrEditLabel": "Create or edit a Location"
+                "title": "Luoghi",
+                "createLabel": "Crea a nuovo Luogo",
+                "createOrEditLabel": "Crea o modifica un luogo"
             },
             "delete": {
-                "question": "Are you sure you want to delete Location {{ id }}?"
+                "question": "Sei sicuro di voler cancellare il luogo {{ id }}?"
             },
             "detail": {
-                "title": "Location"
+                "title": "Luogo"
             },
-            "name": "Name",
-            "description": "Description",
+            "name": "Nome",
+            "description": "Descrizione",
 
             "geom": {
                 "geometry" : "Geometria",

@@ -8,6 +8,7 @@
                 "main": "Entità",
                 "author": "Autore",
                 "book": "Libro",
+                "location": "Luoghi",
                 "additionalEntity": "JHipster con entita' aggiunte qui senza traduzione"
             },
             "account": {
