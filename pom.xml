@@ -653,6 +653,36 @@
                     </arguments>
                 </configuration>
             </plugin>
+
+            <!-- Cloud foundry -->
+            <plugin>
+                <groupId>org.cloudfoundry</groupId>
+                <artifactId>cf-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <configuration>
+                    <server>pivotal-cloud-foundry</server>
+                    <target>https://api.run.pivotal.io</target>
+                    <space>development</space>
+                    <appname>antusbookstore</appname>
+                    <url>antusbookstore.cfapps.io</url>
+                    <memory>512</memory>
+                    <instances>3</instances>
+                    <env>
+                        <greeting>Hello</greeting>
+                    </env>
+
+                    <services>
+                        <service>
+                            <name>app-db</name>
+                            <label>mysql</label>
+                            <provider>cleardb</provider>
+                            <version>n/a</version>
+                            <plan>spark</plan>
+                        </service>
+                    </services>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
