@@ -14,14 +14,14 @@ async:
     queueCapacity: 10000
 
 mail:
-    host: localhost
-    port: 25
+    host: mail2.ids-spa.it
+    port: 2525
     username:
     password:
     protocol: smtp
     tls: false
     auth: false
-    from: bookstore@localhost
+    from: plx.system@ids-spa.it
 
 
 swagger:

@@ -658,15 +658,16 @@
             <plugin>
                 <groupId>org.cloudfoundry</groupId>
                 <artifactId>cf-maven-plugin</artifactId>
-                <version>1.0.1</version>
+                <version>1.1.2</version>
                 <configuration>
-                    <server>pivotal-cloud-foundry</server>
+                    <server>cloud-foundry-credentials</server>
                     <target>https://api.run.pivotal.io</target>
+                    <org>antus</org>
                     <space>development</space>
                     <appname>antusbookstore</appname>
                     <url>antusbookstore.cfapps.io</url>
-                    <memory>512</memory>
-                    <instances>3</instances>
+                    <memory>1024</memory>
+                    <instances>1</instances>
                     <env>
                         <greeting>Hello</greeting>
                     </env>

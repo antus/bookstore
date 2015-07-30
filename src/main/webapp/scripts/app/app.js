@@ -1,13 +1,17 @@
 'use strict';
 
-angular.module('bookstoreApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate',
+angular.module('bookstoreApp', [
+                'LocalStorageModule',
+                'tmh.dynamicLocale',
+                'pascalprecht.translate',
                 'ui.bootstrap', // for modal dialogs
                 'ngResource',
                 'ui.router',
                 'ngCookies',
                 'ngCacheBuster',
                 'infinite-scroll',
-                'leaflet-directive'])
+                'leaflet-directive'
+    ])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
         $rootScope.ENV = ENV;
